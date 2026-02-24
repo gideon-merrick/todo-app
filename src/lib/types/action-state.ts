@@ -1,0 +1,6 @@
+export interface ActionState {
+  fieldErrors?: Record<string, string[]>;
+  inputs?: Record<string, unknown>;
+  message?: string;
+  status: "idle" | "success" | "error";
+}

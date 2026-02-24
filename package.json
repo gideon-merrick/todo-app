@@ -1,0 +1,43 @@
+{
+  "name": "error-handling",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:clean": "docker compose down -v",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "biome:lint": "biome lint",
+    "biome:format": "biome format --write",
+    "biome:fix": "biome check --write"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.4.1",
+    "@prisma/client": "^7.4.1",
+    "better-auth": "^1.4.19",
+    "dotenv": "^17.3.1",
+    "lucide-react": "^0.575.0",
+    "next": "16.1.6",
+    "pg": "^8.18.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/pg": "^8.16.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "daisyui": "^5.5.19",
+    "prisma": "^7.4.1",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "ultracite": "7.2.3"
+  }
+}
