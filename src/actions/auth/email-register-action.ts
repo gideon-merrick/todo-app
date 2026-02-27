@@ -21,6 +21,6 @@ export async function emailRegisterAction(_prevState: ActionState, formData: For
   });
   if (!parsed.success) return { status: "error", fieldErrors: parseErrors(parsed.error), message: "Invalid form data" };
   const result = await handle(emailRegisterService(parsed.data.name, parsed.data.email, parsed.data.password));
-  if (result.error) return { status: "error", message: "Something went wrong. Please try again." };
+  if (result.error) return { status: "error", message: result.error };
   redirect("/dashboard");
 }

@@ -23,6 +23,7 @@ export default function LoginPage() {
               legend="Email"
               name="email"
               placeholder="james@mail.com"
+              required
               type="email"
             />
             <Form.Field
@@ -30,15 +31,16 @@ export default function LoginPage() {
               legend="Password"
               name="password"
               placeholder="••••••••"
+              required
               type="password"
             />
             <Form.Submit className="mt-2">Login</Form.Submit>
           </Form.Root>
 
-          <div className="divider text-base-content/40 text-xs">Don't have an account?</div>
+          <div className="divider text-base-content/40 text-xs">OR</div>
           <LoginWithGithubButton />
-          <Link className="btn btn-outline btn-block btn-sm" href="/auth/register">
-            Create account
+          <Link className="btn btn-link btn-block" href="/auth/register">
+            First time here? Create an account
           </Link>
         </div>
       </div>

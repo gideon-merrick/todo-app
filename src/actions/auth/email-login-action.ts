@@ -19,6 +19,6 @@ export async function emailLoginAction(_prevState: ActionState, formData: FormDa
   });
   if (!parsed.success) return { status: "error", fieldErrors: parseErrors(parsed.error), message: "Invalid form data" };
   const result = await handle(emailLoginService(parsed.data.email, parsed.data.password));
-  if (result.error) return { status: "error", message: "Something went wrong. Please try again." };
+  if (result.error) return { status: "error", message: result.error };
   redirect("/dashboard");
 }
