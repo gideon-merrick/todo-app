@@ -1,3 +1,4 @@
+import { FormCheckbox } from "./ui/form-checkbox";
 import { FormError } from "./ui/form-error";
 import { FormField } from "./ui/form-field";
 import { FormFields } from "./ui/form-fields";
@@ -10,4 +11,5 @@ export const Form = {
   Field: FormField,
   Error: FormError,
   Submit: FormSubmit,
+  Checkbox: FormCheckbox,
 };

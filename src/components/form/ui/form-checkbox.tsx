@@ -1,35 +1,32 @@
 "use client";
 
-import { AlertCircle } from "lucide-react";
-import type { InputHTMLAttributes, ReactNode } from "react";
+import type { InputHTMLAttributes } from "react";
 import { useFormContext } from "@/components/form/lib/form-context";
 
-interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, "form"> {
-  hidden?: boolean;
-  icon?: ReactNode;
-  legend?: string;
+interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, "form" | "type"> {
+  label: string;
   name: string;
 }
 
-export function FormField({ icon, legend, name, hidden, ...inputProps }: Props) {
+export function FormCheckbox({ label, name, ...inputProps }: Props) {
   const { state, pending, formId } = useFormContext();
   const error = state.fieldErrors?.[name];
   const inputId = `${formId}${name}`;
   const errorId = `${formId}${name}-error`;
 
   return (
-    <fieldset className="fieldset" hidden={hidden}>
-      {legend && <legend className="fieldset-legend">{legend}</legend>}
-      <label className={`input w-full ${error ? "input-error" : ""}`} htmlFor={inputId}>
-        {icon && <span className="opacity-50">{icon}</span>}
+    <fieldset className="fieldset">
+      <label className="label cursor-pointer gap-2" htmlFor={inputId}>
         <input
           aria-describedby={error ? errorId : undefined}
           aria-invalid={error ? true : undefined}
           disabled={pending}
           id={inputId}
           name={name}
+          type="checkbox"
           {...inputProps}
         />
+        <span>{label}</span>
       </label>
       {error && (
         <p className="label flex items-center gap-1 text-error" id={errorId} role="alert">
