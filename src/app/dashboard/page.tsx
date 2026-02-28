@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import { getSession } from "@/lib/get-session";
 import { CreateTodoForm } from "@/widgets/create-todo-form";
+import { LogoutButton } from "@/widgets/logout-button";
 import { TodoItem } from "@/widgets/todo-item";
 
 export default async function DashboardPage() {
@@ -16,11 +17,14 @@ export default async function DashboardPage() {
   return (
     <div className="min-h-screen bg-base-100">
       <div className="mx-auto flex max-w-xl flex-col gap-8 px-4 py-12">
-        <div>
-          <h1 className="font-bold text-2xl">Hello, {session.user.name}!</h1>
-          <p className="mt-1 text-base-content/50 text-sm">
-            {done} of {todos.length} tasks completed
-          </p>
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="font-bold text-2xl">Hello, {session.user.name}!</h1>
+            <p className="mt-1 text-base-content/50 text-sm">
+              {done} of {todos.length} tasks completed
+            </p>
+          </div>
+          <LogoutButton />
         </div>
 
         <ul className="flex flex-col gap-2">
