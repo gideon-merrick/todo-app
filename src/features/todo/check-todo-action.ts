@@ -2,10 +2,10 @@
 
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
+import { checkTodoService } from "@/business/todo/check-todo-service";
 import { handle } from "@/lib/handle";
 import { parseErrors } from "@/lib/issues-to-field-errors";
 import type { ActionState } from "@/lib/types/action-state";
-import { checkTodoService } from "@/services/todo/check-todo-service";
 
 const CheckTodoSchema = z.object({
   id: z.string(),

@@ -1,12 +1,12 @@
 "use client";
 
 import { Pen } from "lucide-react";
-import { createTodoAction } from "@/actions/todo/create-todo-action";
-import { Form } from "@/components/form";
+import { createTodoAction } from "@/features/todo/create-todo-action";
+import { Form } from "@/shared/form";
 
 export function CreateTodoForm() {
   return (
-    <Form.Root action={createTodoAction}>
+    <Form action={createTodoAction}>
       <Form.Error />
       <Form.Field
         icon={<Pen className="h-4 w-4" />}
@@ -17,6 +17,6 @@ export function CreateTodoForm() {
         type="text"
       />
       <Form.Submit className="mt-2">Create Todo</Form.Submit>
-    </Form.Root>
+    </Form>
   );
 }

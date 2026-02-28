@@ -1,10 +1,10 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { CreateTodoForm } from "@/components/create-todo-form";
-import { TodoItem } from "@/components/todo-item";
 import { db } from "@/lib/db";
 import { getSession } from "@/lib/get-session";
+import { CreateTodoForm } from "@/widgets/create-todo-form";
+import { TodoItem } from "@/widgets/todo-item";
 
 export default async function DashboardPage() {
   const session = await getSession();

@@ -1,7 +1,7 @@
 "use client";
 
 import { AlertCircle, CheckCircle } from "lucide-react";
-import { useFormContext } from "@/components/form/lib/form-context";
+import { useFormContext } from "../lib/form-context";
 
 export function FormError() {
   const { state } = useFormContext();

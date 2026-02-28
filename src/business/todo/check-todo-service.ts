@@ -1,7 +1,7 @@
 import type { Todo } from "@/generated/client";
 import { db } from "@/lib/db";
 import { handle } from "@/lib/handle";
-import { getTodoService } from "./get-todo";
+import { getTodoService } from "./get-todo-service";
 
 export async function checkTodoService(id: string): Promise<Todo> {
   const todo = await getTodoService(id);

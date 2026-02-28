@@ -2,8 +2,8 @@
 
 import { Trash } from "lucide-react";
 import { startTransition } from "react";
-import { checkTodo } from "@/actions/todo/check-todo";
-import { deleteTodo } from "@/actions/todo/delete-todo";
+import { checkTodoFunction } from "@/features/todo/check-todo-function";
+import { deleteTodoFunction } from "@/features/todo/delete-todo-function";
 import type { Todo } from "@/generated/client";
 
 interface Props {
@@ -13,13 +13,13 @@ interface Props {
 export function TodoItem({ todo }: Props) {
   function handleCheck() {
     startTransition(async () => {
-      await checkTodo(todo.id);
+      await checkTodoFunction(todo.id);
     });
   }
 
   function handleDelete() {
     startTransition(async () => {
-      await deleteTodo(todo.id);
+      await deleteTodoFunction(todo.id);
     });
   }
 

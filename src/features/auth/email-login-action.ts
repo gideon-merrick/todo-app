@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { z } from "zod";
-import { emailLoginService } from "@/business/auth/email-login";
+import { emailLoginService } from "@/business/auth/email-login-service";
 import { handle } from "@/lib/handle";
 import { parseErrors } from "@/lib/issues-to-field-errors";
 import type { ActionState } from "@/lib/types/action-state";

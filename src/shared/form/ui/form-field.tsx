@@ -2,7 +2,7 @@
 
 import { AlertCircle } from "lucide-react";
 import type { InputHTMLAttributes, ReactNode } from "react";
-import { useFormContext } from "@/components/form/lib/form-context";
+import { useFormContext } from "../lib/form-context";
 
 interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, "form"> {
   hidden?: boolean;
